@@ -4,6 +4,11 @@ DIR=/mnt/backup
 LOG=/var/log/backup.log
 DATA=`date +%Y-%m-%d_%H:%M:%S`
 MAIL=backup@example.com
+FTP_ENABLE=YES
+FTP_HOST=
+FTP_USER=
+FTP_PASSWORD=
+
 
 databases=`mysql -h localhost -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
 
