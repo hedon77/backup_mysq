@@ -30,8 +30,6 @@ elif [ "$1" = "weekly" ]; then
 
 echo "$DATA Backup $1 ...."
 
-echo "$DATA Backup $1 ...."
-
 for db in $databases; do
     if [[ "$db" != "information_schema" ]] && [[ "$db" != "performance_schema" ]] && [[ "$db" != _* ]] ; then
         echo "Dumping database: $db"
@@ -47,6 +45,8 @@ echo "Backup OK" | mail -s "$DATA Backup $1 size: $FILESIZE" $MAIL
 
 
 elif [ "$1" = "daily" ]; then
+
+echo "$DATA Backup $1 ...."
 
 for db in $databases; do
     if [[ "$db" != "information_schema" ]] && [[ "$db" != "performance_schema" ]] && [[ "$db" != _* ]] ; then
