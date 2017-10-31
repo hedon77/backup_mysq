@@ -24,7 +24,7 @@ done
 
 find $DIR/monthly/* -mtime +365 -type f -exec rm {} \;
 echo "$DATA Backup $1 size: $FILESIZE" >> $LOG
-echo "Backup OK" | mail -s "$DATA Backup $1 size: $FILESIZE" serwis@adp.wroc.pl
+echo "Backup OK" | mail -s "$DATA Backup $1 size: $FILESIZE" $MAIL
 
 elif [ "$1" = "weekly" ]; then
 
@@ -43,7 +43,7 @@ done
 
 find $DIR/weekly/* -mtime +28 -type f -exec rm {} \;
 echo "$DATA Backup $1 size: $FILESIZE" >> $LOG
-echo "Backup OK" | mail -s "$DATA Backup $1 size: $FILESIZE" serwis@adp.wroc.pl
+echo "Backup OK" | mail -s "$DATA Backup $1 size: $FILESIZE" $MAIL
 
 
 elif [ "$1" = "daily" ]; then
